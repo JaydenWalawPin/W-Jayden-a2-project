@@ -18,7 +18,10 @@ namespace MohawkGame2D
         /// True = Back side of coin 
         /// False = Front side of coin
         Boolean coinFlipping = false;
-        
+        /// Coinflip 
+        int CoinFlipRandom = 0;
+
+
         public void Setup()
         {
             Window.SetSize(400, 400);
@@ -31,8 +34,12 @@ namespace MohawkGame2D
 
         public void Update()
         {
+            //  Heads is 0, Tails is 1
+            int CoinFlipRandom = Random.Integer(1);
+            
             // Supposed to flip the coins between the front and back while the animation plays
             // It works now!!
+
             if (CoinHeight <= 0)
                 coinFlipping = true;
             if (CoinHeight >= 180)
